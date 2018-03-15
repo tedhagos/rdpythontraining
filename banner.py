@@ -1,10 +1,11 @@
 
 
 def display(message, border):
-    line = border * 10
+    line = border * len(message)
     print(line)
     print(message)
     print(line)
 
 
-display("Hello there", "*")
+if __name__ == "__main__":
+    display("Hello World", "-")
