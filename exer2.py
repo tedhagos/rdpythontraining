@@ -2,7 +2,7 @@
 # This is the correct solution
 
 
-def calc(end):
+def calc_decl(end):
     numlist = range(1, end)
     # find all the multiples of 3 < 1000
     list_3 = list(filter(lambda x: x % 3 == 0, numlist))
@@ -16,9 +16,21 @@ def calc(end):
     print(sum(combined_list))
 
 
-calc(1000)
+def calc_imp(end):
+    numlist = range(1, end)
+    list_3 = list(filter(lambda x: x % 3 == 0, numlist))
+    list_5 = list(filter(lambda x: x % 5 == 0, numlist))
+    temp_list = []
+
+    for i in list_5:
+        if i not in list_3:
+            temp_list.append(i)
+
+    combined_list = list_3 + temp_list
+    print(combined_list)
+    print(sum(combined_list))
 
 
-# def foo(x):
-#     if x % 3 == 0:
-#         True
+# calc_decl(1000)
+calc_imp(1000)
+
